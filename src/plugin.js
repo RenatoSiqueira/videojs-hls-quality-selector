@@ -1,5 +1,5 @@
 import videojs from 'video.js';
-import {version as VERSION} from '../package.json';
+import { version as VERSION } from '../package.json';
 import ConcreteButton from './ConcreteButton';
 import ConcreteMenuItem from './ConcreteMenuItem';
 
@@ -27,20 +27,11 @@ class HlsQualitySelectorPlugin {
 
     // If there is quality levels plugin and the HLS tech exists
     // then continue.
-    if (this.player.qualityLevels && this.getHls()) {
+    if (this.player.qualityLevels) {
       // Create the quality button.
       this.createQualityButton();
       this.bindPlayerEvents();
     }
-  }
-
-  /**
-   * Returns HLS Plugin
-   *
-   * @return {*} - videojs-hls-contrib plugin.
-   */
-  getHls() {
-    return this.player.tech({ IWillNotUseThisInPlugins: true }).hls;
   }
 
   /**
