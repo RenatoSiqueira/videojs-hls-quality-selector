@@ -27,6 +27,6 @@ export default {
     'video.js': 'videojs'
   },
   plugins: [
-    json(),
+    json()
   ]
 };

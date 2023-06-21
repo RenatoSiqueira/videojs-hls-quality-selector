@@ -3,7 +3,6 @@
  *
  * This includes all dependencies for both the plugin and its tests.
  */
-import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
 import multiEntry from 'rollup-plugin-multi-entry';
@@ -40,20 +39,6 @@ export default {
     json(),
     commonjs({
       sourceMap: false
-    }),
-    babel({
-      babelrc: false,
-      exclude: 'node_modules/**',
-      presets: [
-        ['es2015', {
-          loose: true,
-          modules: false
-        }]
-      ],
-      plugins: [
-        'external-helpers',
-        'transform-object-assign'
-      ]
     })
   ]
 };
