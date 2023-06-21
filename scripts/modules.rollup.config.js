@@ -5,7 +5,6 @@
  * These modules DO NOT include their dependencies as we expect those to be
  * handled by the module system.
  */
-import babel from 'rollup-plugin-babel';
 import json from 'rollup-plugin-json';
 
 export default {
@@ -29,19 +28,5 @@ export default {
   },
   plugins: [
     json(),
-    babel({
-      babelrc: false,
-      exclude: 'node_modules/**',
-      presets: [
-        ['es2015', {
-          loose: true,
-          modules: false
-        }]
-      ],
-      plugins: [
-        'external-helpers',
-        'transform-object-assign'
-      ]
-    })
   ]
 };

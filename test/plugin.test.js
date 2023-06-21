@@ -6,8 +6,6 @@ import videojs from 'video.js';
 
 import plugin from '../src/plugin';
 
-const Player = videojs.getComponent('Player');
-
 QUnit.test('the environment is sane', function(assert) {
   assert.strictEqual(typeof Array.isArray, 'function', 'es5 exists');
   assert.strictEqual(typeof sinon, 'object', 'sinon exists');
@@ -41,7 +39,7 @@ QUnit.test('registers itself with video.js', function(assert) {
   assert.expect(2);
 
   assert.strictEqual(
-    typeof Player.prototype.hlsQualitySelector,
+    typeof videojs.getPlugin('hlsQualitySelector'),
     'function',
     'videojs-hls-quality-selector plugin was registered'
   );

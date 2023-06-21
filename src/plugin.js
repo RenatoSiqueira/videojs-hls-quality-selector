@@ -6,10 +6,6 @@ import ConcreteMenuItem from './ConcreteMenuItem';
 // Default options for the plugin.
 const defaults = {};
 
-// Cross-compatibility for Video.js 5 and 6.
-const registerPlugin = videojs.registerPlugin || videojs.plugin;
-// const dom = videojs.dom || videojs;
-
 /**
  * VideoJS HLS Quality Selector Plugin class.
  */
@@ -199,6 +195,8 @@ class HlsQualitySelectorPlugin {
  */
 const onPlayerReady = (player, options) => {
   player.addClass('vjs-hls-quality-selector');
+  // eslint-disable-next-line no-console
+  console.log('HERE 4', player.hlsQualitySelector);
   player.hlsQualitySelector = new HlsQualitySelectorPlugin(player, options);
 };
 
@@ -215,13 +213,19 @@ const onPlayerReady = (player, options) => {
  *           An object of options left to the plugin author to define.
  */
 const hlsQualitySelector = function(options) {
+  // eslint-disable-next-line no-console
+  console.log('AICI 2', videojs.VERSION);
+
   this.ready(() => {
-    onPlayerReady(this, videojs.mergeOptions(defaults, options));
+    // eslint-disable-next-line no-console
+    console.log('AICI 3', videojs.VERSION);
+
+    onPlayerReady(this, videojs.obj.merge(defaults, options));
   });
 };
 
 // Register the plugin with video.js.
-registerPlugin('hlsQualitySelector', hlsQualitySelector);
+videojs.registerPlugin('hlsQualitySelector', hlsQualitySelector);
 
 // Include the version number.
 hlsQualitySelector.VERSION = VERSION;
