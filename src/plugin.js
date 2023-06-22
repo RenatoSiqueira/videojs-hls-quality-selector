@@ -195,8 +195,6 @@ class HlsQualitySelectorPlugin {
  */
 const onPlayerReady = (player, options) => {
   player.addClass('vjs-hls-quality-selector');
-  // eslint-disable-next-line no-console
-  console.log('HERE 4', player.hlsQualitySelector);
   player.hlsQualitySelector = new HlsQualitySelectorPlugin(player, options);
 };
 
@@ -212,14 +210,9 @@ const onPlayerReady = (player, options) => {
  * @param    {Object} [options={}]
  *           An object of options left to the plugin author to define.
  */
-const hlsQualitySelector = function(options) {
-  // eslint-disable-next-line no-console
-  console.log('AICI 2', videojs.VERSION);
+const hlsQualitySelector = function (options) {
 
   this.ready(() => {
-    // eslint-disable-next-line no-console
-    console.log('AICI 3', videojs.VERSION);
-
     onPlayerReady(this, videojs.obj.merge(defaults, options));
   });
 };
