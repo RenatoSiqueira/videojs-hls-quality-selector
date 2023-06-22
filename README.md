@@ -1,8 +1,7 @@
 # videojs-hls-quality-selector
+
 [![CircleCI](https://circleci.com/gh/chrisboustead/videojs-hls-quality-selector/tree/master.svg?style=svg)](https://circleci.com/gh/chrisboustead/videojs-hls-quality-selector/tree/master)
 [![npm version](https://badge.fury.io/js/videojs-hls-quality-selector.svg)](https://badge.fury.io/js/videojs-hls-quality-selector)
-
-**Note:** v1.x.x is Only compatible with VideoJS 7.x due to the move from `videojs-contrib-hls` to `videojs/http-streaming`.  For VideoJS v5 or v6 support please use a `v0.x.x` tag.
 
 ## Description
 
@@ -27,8 +26,7 @@ Set this to override the default positioning of the menu button in the control b
 
 **vjsIconClass** `string` - _"vjs-icon-hd"_
 
-Set this to one of the custom VJS icons ([https://videojs.github.io/font/](https://videojs.github.io/font/)) to override the icon for the menu button. 
-
+Set this to one of the custom VJS icons ([https://videojs.github.io/font/](https://videojs.github.io/font/)) to override the icon for the menu button.
 
 ## Methods
 
@@ -36,12 +34,10 @@ Set this to one of the custom VJS icons ([https://videojs.github.io/font/](https
 
 Return the current set quality or 'auto'
 
-
 ## Screenshots
 
 Default setup - Menu selected:
 ![Example](example.png)
-
 
 Display Current Quality option enabled:
 ![Example](example-2.png)
@@ -120,7 +116,6 @@ require(['video.js', 'videojs-hls-quality-selector'], function(videojs) {
 
 ## License
 
-MIT. Copyright (c) Chris Boustead (chris@forgemotion.com)
-
+MIT. Copyright (c) Chris Boustead (<chris@forgemotion.com>)
 
 [videojs]: http://videojs.com/
