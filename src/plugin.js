@@ -48,7 +48,7 @@ class HlsQualitySelectorPlugin {
 
     const placementIndex = player.controlBar.children().length - 2;
     const concreteButtonInstance = player.controlBar.addChild(this._qualityButton,
-      {componentClass: 'qualitySelector'},
+      { componentClass: 'qualitySelector' },
       this.config.placementIndex || placementIndex);
 
     concreteButtonInstance.addClass('vjs-quality-selector');
@@ -97,7 +97,7 @@ class HlsQualitySelectorPlugin {
     const levelItems = [];
 
     for (let i = 0; i < levels.length; ++i) {
-      const {width, height} = levels[i];
+      const { width, height } = levels[i];
       const pixels = width > height ? height : width;
 
       if (!pixels) {
@@ -160,7 +160,7 @@ class HlsQualitySelectorPlugin {
     }
 
     for (let i = 0; i < qualityList.length; ++i) {
-      const {width, height} = qualityList[i];
+      const { width, height } = qualityList[i];
       const pixels = width > height ? height : width;
 
       qualityList[i].enabled = (pixels === quality || quality === 'auto');
@@ -210,7 +210,7 @@ const onPlayerReady = (player, options) => {
  * @param    {Object} [options={}]
  *           An object of options left to the plugin author to define.
  */
-const hlsQualitySelector = function (options) {
+const hlsQualitySelector = function(options) {
   this.ready(() => {
     onPlayerReady(this, videojs.obj.merge(defaults, options));
   });
