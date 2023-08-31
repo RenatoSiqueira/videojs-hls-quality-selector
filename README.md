@@ -59,7 +59,7 @@ Display Current Quality option enabled:
 ## Installation
 
 ```sh
-npm install --save videojs-hls-quality-selector
+npm install --save @mycujoo/videojs-hls-quality-selector
 ```
 
 ## Usage
